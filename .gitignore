@@ -1,0 +1,45 @@
+# Android Studio/IntelliJ IDEA files
+.idea/
+*.iml
+*.apk
+.DS_Store
+
+# Gradle files
+.gradle/
+build/
+gradlew.bat
+gradlew
+gradle/wrapper
+
+# Local configuration files
+local.properties
+google-services.json
+
+# Log/OS Files
+*.log
+output.json
+
+# Android Studio specific generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IntelliJ specific files
+*.hprof
+
+# Keystore files
+*.jks
+*.keystore
+
+# Miscellaneous IntelliJ project files
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+

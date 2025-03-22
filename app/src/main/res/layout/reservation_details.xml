@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="imgSrc"
+            type="Integer" />
+        <variable
+            name="labelText"
+            type="String" />
+        <variable
+            name="fieldValue"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/info_icon"
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:imageResource="@{imgSrc}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{labelText}"
+                android:textColor="@color/blue_grey"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/reservation_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text="@{fieldValue}"
+            android:layout_marginTop="-20dp"
+            android:layout_marginStart="35dp"
+            android:focusable="true"
+            android:longClickable="true"
+            android:textIsSelectable="true"/>
+        <View
+            android:layout_width="250dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/light_grey"/>
+    </LinearLayout>
+</layout>

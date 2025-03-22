@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="fullName" type="String"/>
+        <variable name="email" type="String"/>
+        <variable name="phone" type="String"/>
+        <variable name="numberOfGuests" type="String"/>
+        <variable name="specialRequests" type="String"/>
+        <variable name="reservationDate" type="String"/>
+        <variable name="starRequired" type="String"/>
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="0dp"
+
+            android:id="@+id/main">
+
+            <include
+                layout="@layout/tool_bar"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_form_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reservation_form"
+                android:textColor="@color/orange_Corail"
+                android:textSize="18sp"
+                android:textStyle="bold|normal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center" />
+
+            <!-- Détails du Restaurant -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+                <!-- Nom du Restaurant -->
+                <TextView
+                    android:id="@+id/tv_restaurant_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold|normal"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="left" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="-5dp">
+
+                    <ImageView
+                        android:id="@+id/iv_location_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_location_on_24"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true" />
+
+                    <TextView
+                        android:id="@+id/tv_restaurant_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_toEndOf="@id/iv_location_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="4dp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_restaurant_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+
+            <include
+                layout="@layout/label_with_star"
+                app:labelText="@{numberOfGuests}"
+                app:starText="@{starRequired}" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupGuests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="-10dp">
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:buttonTint="@color/blue_grey" />
+
+                <RadioButton
+                    android:id="@+id/radio2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:buttonTint="@color/blue_grey" />
+
+                <RadioButton
+                    android:id="@+id/radio3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:buttonTint="@color/blue_grey" />
+
+                <RadioButton
+                    android:id="@+id/radio4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:buttonTint="@color/blue_grey" />
+
+                <RadioButton
+                    android:id="@+id/radio5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:buttonTint="@color/blue_grey" />
+
+                <RadioButton
+                    android:id="@+id/radio6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more"
+                    android:buttonTint="@color/blue_grey" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/et_customGuests"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:autofillHints=""
+                android:hint="@string/enter_number_of_guests"
+                android:inputType="number"
+                android:visibility="gone"
+                android:background="@drawable/border"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <include
+                layout="@layout/label_with_star"
+                app:labelText="@{reservationDate}"
+                app:starText="@{starRequired}" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+                <EditText
+                    android:id="@+id/et_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:autofillHints=""
+                    android:background="@drawable/border"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="50dp"
+                    android:hint="@string/date_time_select_hint"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="datetime" />
+
+                <ImageView
+                    android:id="@+id/iv_calendar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="2dp"
+                    android:src="@drawable/baseline_calendar_month_24"
+                    android:contentDescription="@string/calender_icon_des"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:tint="@xml/tint_selector" />
+            </RelativeLayout>
+
+            <include
+                layout="@layout/label_with_star"
+                app:labelText="@{fullName}"
+                app:starText="@{starRequired}" />
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:autofillHints=""
+                android:background="@drawable/border"
+                android:paddingStart="16dp"
+                android:paddingEnd="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/name_hint"
+                android:focusable="true"
+                android:clickable="true"
+                android:inputType="text" />
+
+            <include
+                layout="@layout/label_with_star"
+                app:labelText="@{email}"
+                app:starText="@{starRequired}" />
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:autofillHints=""
+                android:background="@drawable/border"
+                android:paddingStart="16dp"
+                android:paddingEnd="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/email_hint"
+                android:focusable="true"
+                android:clickable="true"
+                android:inputType="textEmailAddress" />
+
+            <include
+                layout="@layout/label_with_star"
+                app:labelText="@{phone}"
+                app:starText="@{starRequired}" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:autofillHints=""
+                android:background="@drawable/border"
+                android:paddingStart="16dp"
+                android:paddingEnd="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/phone"
+                android:focusable="true"
+                android:clickable="true"
+                android:inputType="phone" />
+
+            <include
+                layout="@layout/label_with_star"
+                app:labelText="@{specialRequests}" />
+
+            <CheckBox
+                android:layout_marginStart="16dp"
+                android:id="@+id/checkbox_table_near_window"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/table_near_window"
+                android:buttonTint="@color/blue_grey" />
+
+            <CheckBox
+                android:layout_marginStart="16dp"
+                android:id="@+id/checkbox_vegetarian"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/vegetarian"
+                android:buttonTint="@color/blue_grey" />
+
+            <CheckBox
+                android:layout_marginStart="16dp"
+                android:id="@+id/checkbox_other"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/other"
+                android:buttonTint="@color/blue_grey" />
+
+            <EditText
+                android:id="@+id/editText_other_request"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:paddingStart="16dp"
+                android:paddingEnd="50dp"
+                android:autofillHints=""
+                android:hint="@string/specify_request"
+                android:inputType="textMultiLine"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"
+                android:scrollbars="vertical"
+                android:maxLines="5"
+                android:focusable="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp">
+
+                <Button
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:text="@string/cancel"
+                    android:backgroundTint="@color/blue_grey"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="homeActivity"/>
+                <Button
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:text="@string/reserve"
+                    android:backgroundTint="@color/orange_Corail"
+                    android:onClick="reserveRestaurant"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

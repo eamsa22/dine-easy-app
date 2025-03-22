@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/label_with_star.xml -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="labelText"
+            type="String" />
+        <variable
+            name="starText"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical">
+
+        <TextView
+            android:id="@+id/tv_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange_Corail"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="5dp"
+            android:text="@{labelText}" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{starText}"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="18sp"
+            android:layout_toEndOf="@id/tv_label"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp" />
+    </RelativeLayout>
+
+</layout>

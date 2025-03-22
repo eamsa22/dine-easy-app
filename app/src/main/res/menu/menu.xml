@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Main"
+        android:title="Accueil"/>
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/explore_restaurants"/>
+    <item
+        android:id="@+id/Consultation"
+        android:title="@string/see_reservation_details"/>
+</menu>

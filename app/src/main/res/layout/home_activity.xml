@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HomeActivity">
+
+    <include layout="@layout/tool_bar" android:layout_height="wrap_content" android:layout_width="match_parent">
+    </include>
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/filter_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp"
+        android:background="@drawable/filter_card_border">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/location_input"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/filter_border"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:hint="@string/hint_location"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/checkBox_vegan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_vegan"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/location_input"
+                android:layout_marginTop="8dp"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_vegetarian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_vegeterian"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/checkBox_vegan"
+                app:layout_constraintTop_toBottomOf="@id/location_input"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/search"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/orange_Corail"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:paddingVertical="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_card"
+        app:cornerRadius="24dp"/>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:indeterminateTint="@color/orange_Corail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintHeight_percent="0.5"
+        android:visibility="gone"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/restaurant_recycler_view"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="12dp"
+        android:scrollbars="vertical"
+        android:paddingBottom="16dp"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/search_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="visible"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

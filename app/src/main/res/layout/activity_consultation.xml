@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="-300dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_by_reservationNumber"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/orange_Corail"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/entrez_reservation_Number"
+            android:padding="10dp"
+            android:background="@android:drawable/editbox_background"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search"
+            android:padding="10dp"
+            android:backgroundTint="@color/orange_Corail"
+            android:onClick="searchReservation"/>
+
+        <TextView
+            android:id="@+id/tv_error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

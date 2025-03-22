@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="titleConsultOrConfirm" type="String" />
+        <variable name="confirmationMessage" type="String" />
+        <variable name="iconInfo"  type="Integer" />
+        <variable name="labelReservationNumber" type="String" />
+        <variable name="fieldReservationNumber" type="String" />
+        <variable name="iconEmail" type="Integer" />
+        <variable name="labelEmail" type="String" />
+        <variable name="fieldEmail" type="String" />
+        <variable name="iconPhone" type="Integer" />
+        <variable name="labelPhone" type="String" />
+        <variable name="fieldPhone" type="String" />
+        <variable name="iconGuests" type="Integer" />
+        <variable name="labelGuests" type="String" />
+        <variable name="fieldGuests" type="String" />
+        <variable name="restaurantAddress" type="String" />
+        <variable name="restaurantName" type="String" />
+        <variable name="reservationDate" type="String" />
+        <variable name="reservationDateLabel" type="String" />
+        <variable name="iconCalendar" type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.ConfirmationActivity"
+        android:scrollbars="vertical">
+
+        <include layout="@layout/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_form_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{titleConsultOrConfirm}"
+            android:textColor="@color/orange_Corail"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{confirmationMessage}"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <include
+            layout="@layout/reservation_details"
+            app:imgSrc="@{iconInfo}"
+            app:labelText="@{labelReservationNumber}"
+            app:fieldValue="@{fieldReservationNumber}"/>
+
+        <include
+            layout="@layout/reservation_details"
+            app:imgSrc="@{iconEmail}"
+            app:labelText="@{labelEmail}"
+            app:fieldValue="@{fieldEmail}"/>
+
+        <include
+            layout="@layout/reservation_details"
+            app:imgSrc="@{iconPhone}"
+            app:labelText="@{labelPhone}"
+            app:fieldValue="@{fieldPhone}"/>
+
+        <include
+            layout="@layout/reservation_details"
+            app:imgSrc="@{iconGuests}"
+            app:labelText="@{labelGuests}"
+            app:fieldValue="@{fieldGuests}"/>
+
+        <include
+            layout="@layout/reservation_details"
+            app:imgSrc="@{iconCalendar}"
+            app:labelText="@{reservationDateLabel}"
+            app:fieldValue="@{reservationDate}"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="600dp"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+                <TextView
+                    android:id="@+id/tv_restaurant_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold|normal"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="@{restaurantName}"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="-5dp">
+
+                    <ImageView
+                        android:id="@+id/iv_location_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_location_on_24"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true" />
+
+                    <TextView
+                        android:id="@+id/tv_restaurant_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_toEndOf="@id/iv_location_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="4dp"
+                        android:text="@{restaurantAddress}"/>
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_restaurant_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+</layout>

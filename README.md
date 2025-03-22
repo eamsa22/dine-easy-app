@@ -1,4 +1,4 @@
-# Android Project - Integration of Google Places and Firebase
+# Dine easy Project - Integration of Google Places and Firebase
 
 This project uses **Google Places API** to access Google Places services, as well as **Firebase** for features such as real-time database.
 
@@ -51,4 +51,7 @@ Firebase is integrated for features Firestore and Storage. Follow the steps belo
 16. Choose the storage location and click Done.
 
 Note: Firebase Storage offers a free trial for up to 1GB of storage. After the free trial ends, you may be charged for storage usage. You can monitor usage and switch to a paid plan if needed. For the storage requirements of the app (e.g., storing images or files), make sure you have sufficient free storage or switch to a paid plan after the free trial ends.
+
 Note: Firebase Services is already enabled for the project you don't have to do any configuration in gradle for this.
+
+Note: you have to activate Localisation and internet to run the app
